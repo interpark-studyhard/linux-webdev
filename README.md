@@ -14,8 +14,11 @@
 * 저자 직강 동영상: <https://www.youtube.com/playlist?list=PLVsNizTWUw7EoFNBhIdVFp9eT6P22hU1o>
 * 까페: <http://cafe.naver.com/thisislinux>
 
+## 스터디 진도
+
+TODO: 3개월 목표
+
 ## 주입식 교육
 
-1. 족보: [강의자료]
-
+1. 족보: [교육자료]
 
