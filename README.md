@@ -2,7 +2,8 @@
 
 ## 멤버
 
-* 주조선용가유이정서천
+* 1반: 유선용
+* 2반: 임주조정서가
 
 ## 교재 - 이것이 리눅스다
 
@@ -13,12 +14,14 @@
 * 저자 직강 동영상: <https://www.youtube.com/playlist?list=PLVsNizTWUw7EoFNBhIdVFp9eT6P22hU1o>
 * 까페: <http://cafe.naver.com/thisislinux>
 
-## 스터디 진도
+## 스터디 일정
 
-TODO: 3개월 목표
+날짜: 4/2일(2반은 4/8) 부터 매주 토요일 격주로 진행
+시간: 11:10~13:00
 
 ## 주입식 교육
 
+0. VirtualBox: [교육자료]
 1. 족보: [교육자료]
 
 
