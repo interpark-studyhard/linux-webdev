@@ -8,7 +8,7 @@ IFS=$ifsbk
 for p in $*; do
     p_nm=`echo $p | sed -e 's/=.*$//'`
     p_vl=`echo $p | sed -e 's/^.*=//'`
-    eval "req_${p_nm}=${p_vl}"
+    eval "req_${p_nm}='${p_vl}'"
 done
 
 # check token
