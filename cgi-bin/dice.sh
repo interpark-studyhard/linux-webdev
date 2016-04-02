@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # parse parameters
 ifsbk=$IFS; IFS="&"
