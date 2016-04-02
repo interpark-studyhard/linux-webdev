@@ -15,9 +15,9 @@ done
 token=gTb9no3srtZhelWS7XDQRkdU
 if [ x"$token" != x"$req_token" ]; then
     echo "Status: 403 Forbidden"
-    echo "Content-Type: text/plain"
+    echo "Content-Type: text/html"
     echo
-    echo "403 Forbidden"
+    echo "Forbidden. This CGI script serve for <a href=\"https://interpark-studyhard.slack.com/\">https://interpark-studyhard.slack.com/</a>."
     exit 0
 fi
 
