@@ -25,6 +25,9 @@ fi
 user_name=${req_user_name:-UnknownUser}
 maximum=${req_text:-6}
 maximum=`expr $maximum + 0` # force convert number
+if [ -z "$maximum" ]; then
+    maximum=6
+fi
 
 # throw dice
 rand=`expr \( $RANDOM + 1 \) % $maximum`
