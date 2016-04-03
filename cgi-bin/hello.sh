@@ -26,7 +26,7 @@ echo -n '<blockquote><pre>'
 cat $0 | sed -e 's/</\&lt;/g' -e 's/>/\&gt;/g'
 echo '</pre></blockquote>'
 
-echo <<EOF
+cat <<EOF
 </body>
 </html>
 EOF
