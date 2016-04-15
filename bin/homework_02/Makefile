@@ -10,7 +10,7 @@ help:
 	echo -e "make check\tCheck resolve all the problems."; \
 	echo -e "make submit\tSubmit homework. (If you get pass 'make check'.)\n"; \
 	echo -e "make clean\tClean work directory."; \
-	echo -e "make distclean\tClean work directory also clean downloaded.\n"
+	echo -e "make distclean\tClean work directory and also clean downloaded files.\n"
 
 download: data/broken.zip
 
