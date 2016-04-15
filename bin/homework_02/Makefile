@@ -2,7 +2,7 @@
 submit_url = http://studyhard.yidigun.com/linux-webdev/cgi-bin/submit.sh
 homework = homework_02
 
-.PHONY: help download init clean distclean check submit cleancheck extract
+.PHONY: help download init clean distclean check submit cleancheck
 
 help:
 	@echo -e "Study Hard: Linux homework_02\n"; \
@@ -14,9 +14,7 @@ help:
 
 download: data/broken.zip
 
-init: clean extract
-
-extract: data/broken.zip
+init: clean data/broken.zip
 	unzip -q data/broken.zip
 
 clean:
@@ -52,9 +50,9 @@ submit: jin.md5 soo.md5
 	curl -T jin.md5 $(submit_url)/$(homework)/$${email}/jin.md5; \
 	curl -T soo.md5 $(submit_url)/$(homework)/$${email}/soo.md5; \
 
-soo: extract
+jin: init
 
-jin: extract
+soo: init
 
 jin.md5: jin
 	(cd jin; find . -type f -exec md5sum {} \; | sort ) >jin.md5
