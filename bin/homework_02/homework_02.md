@@ -117,7 +117,7 @@ GitHub에서 다운로드 한다.
     homework_01.sh  homework_02
     dagui@yura:~/linux-webdev/bin]$ cd homework_02/
     dagui@yura:~/linux-webdev/bin/homework_02]$ ls
-    Makefile
+    Makefile   homework_02.md
     dagui@yura:~/linux-webdev/bin/homework_02]$
 
 make를 쳐보면 콩글리시로 도움말이 나온다.
