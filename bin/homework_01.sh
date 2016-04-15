@@ -30,7 +30,7 @@ echo "done."
 echo -n "Submit config files... "
 (cd $tmpdir; \
     diff -Nuar a b | \
-    curl -T - $submit_url/$homework/$email/$hostname) && \
+    curl -T - $submit_url/$homework/$email/$hostname.patch) && \
 rm -rf $tmpdir
 
 # end of script
