@@ -28,7 +28,7 @@ cleancheck:
 
 check: data/merged.md5 cleancheck jin.md5 soo.md5
 	@if diff -q jin.md5 soo.md5; then \
-		echo "You have synchronized jin and soo. 1st step: PASSED"; \
+		echo "You have synchronized soo and jin. 1st step: PASSED"; \
 		if diff -q data/merged.md5 jin.md5; then \
 			echo "Congraturation! 2nd step: PASSED"; \
 		else \
