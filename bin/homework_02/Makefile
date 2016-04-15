@@ -6,11 +6,11 @@ homework = homework_02
 
 help:
 	@echo -e "Study Hard: Linux homework_02\n"; \
-	echo -e "make clean\tClean work directory."; \
-	echo -e "make distclean\tClean work directory also clean downloaded."; \
 	echo -e "make init\tDownload and extract example archive."; \
 	echo -e "make check\tCheck resolve all the problems."; \
-	echo -e "make submit\tSubmit homework. (If you get pass 'make check'.)"
+	echo -e "make submit\tSubmit homework. (If you get pass 'make check'.)\n"; \
+	echo -e "make clean\tClean work directory."; \
+	echo -e "make distclean\tClean work directory also clean downloaded.\n"
 
 download: data/broken.zip
 
