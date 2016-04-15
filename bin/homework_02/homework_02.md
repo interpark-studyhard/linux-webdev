@@ -117,13 +117,13 @@ GitHub에서 다운로드 한다.
     homework_01.sh  homework_02
     dagui@yura:~/linux-webdev/bin]$ cd homework_02/
     dagui@yura:~/linux-webdev/bin/homework_02]$ ls
-    Makefile   homework_02.md
+    Makefile  homework_02.md
     dagui@yura:~/linux-webdev/bin/homework_02]$
 
 make를 쳐보면 콩글리시로 도움말이 나온다.
 
     dagui@yura:~/linux-webdev/bin/homework_02]$ make
-    Study Hard: Linux homework_02
+    Study Hard: Linux homework_02.md
 
     make init	Download and extract example archive.
     make check	Check wheather all the problems are resolved.
@@ -145,7 +145,7 @@ make init 을 쳐보면 숙제 파일을 다운로드 받는다.
     100  185M  100  185M    0     0  2481k      0  0:01:16  0:01:16 --:--:-- 2491k
     unzip -q data/broken.zip
     dagui@yura:~/linux-webdev/bin/homework_02]$ ls
-    Makefile  data  jin  soo
+    Makefile  data  homework_02.md  jin  soo
     dagui@yura:~/linux-webdev/bin/homework_02]$
 
 # 숙제 내용은 2개의 폴더를 동기화 하는 것
