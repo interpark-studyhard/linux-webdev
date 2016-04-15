@@ -56,10 +56,10 @@ soo: extract
 
 jin: extract
 
-jin.md5:
+jin.md5: jin
 	(cd jin; find . -type f -exec md5sum {} \; | sort ) >jin.md5
 
-soo.md5:
+soo.md5: soo
 	(cd soo; find . -type f -exec md5sum {} \; | sort ) >soo.md5
 
 data:
