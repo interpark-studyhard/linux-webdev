@@ -7,7 +7,7 @@ homework = homework_02
 help:
 	@echo -e "Study Hard: Linux homework_02\n"; \
 	echo -e "make init\tDownload and extract example archive."; \
-	echo -e "make check\tCheck resolve all the problems."; \
+	echo -e "make check\tCheck wheather all the problems are resolved."; \
 	echo -e "make submit\tSubmit homework. (If you get pass 'make check'.)\n"; \
 	echo -e "make clean\tClean work directory."; \
 	echo -e "make distclean\tClean work directory and also clean downloaded files.\n"
@@ -28,15 +28,15 @@ cleancheck:
 
 check: data/merged.md5 cleancheck jin.md5 soo.md5
 	@if diff -q jin.md5 soo.md5; then \
-		echo "You have synchronized soo and jin. 1st step: PASSED"; \
+		echo "You have synchronized soo and jin. 1st step: PASS"; \
 		if diff -q data/merged.md5 jin.md5; then \
-			echo "Congraturation! 2nd step: PASSED"; \
+			echo "Congraturation! 2nd step: PASS"; \
 		else \
-			echo "2nd step: NOT PASSED"; \
+			echo "2nd step: FAIL"; \
 		fi; \
 	else \
-		echo "Dir soo and jin is still different. 1st step: NOT PASSED"; \
-		echo "2nd step: NOT PASSED"; \
+		echo "Dir soo and jin is still different. 1st step: FAIL"; \
+		echo "2nd step: FAIL"; \
 	fi
 
 submit: jin.md5 soo.md5
