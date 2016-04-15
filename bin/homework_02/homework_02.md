@@ -227,10 +227,12 @@ make submit 으로 숙제를 제출한다.
 
 작업하다 망했을 경우 make init 을 쳐서 처음부터 다시 시작할 수 있다.
 
-    studyhard@inna:~/linux-webdev/bin/homework_02]$ make init
+    dagui@inna:~/linux-webdev/bin/homework_02]$ make init
     rm -rf soo jin jin.md5 soo.md5
     unzip -q data/broken.zip
-    studyhard@inna:~/linux-webdev/bin/homework_02]$ 
+    dagui@yura:~/linux-webdev/bin/homework_02]$ ls
+    Makefile  data  homework_02.md  jin  soo
+    dagui@inna:~/linux-webdev/bin/homework_02]$ 
 
 
 
