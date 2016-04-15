@@ -50,14 +50,10 @@ submit: jin.md5 soo.md5
 	curl -T jin.md5 $(submit_url)/$(homework)/$${email}/jin.md5; \
 	curl -T soo.md5 $(submit_url)/$(homework)/$${email}/soo.md5; \
 
-jin: init
-
-soo: init
-
-jin.md5: jin
+jin.md5:
 	(cd jin; find . -type f -exec md5sum {} \; | sort ) >jin.md5
 
-soo.md5: soo
+soo.md5:
 	(cd soo; find . -type f -exec md5sum {} \; | sort ) >soo.md5
 
 data:

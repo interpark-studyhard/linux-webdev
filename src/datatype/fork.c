@@ -8,12 +8,12 @@ int main(int argc, char** argv) {
 
 	if (pid == 0) {
 
-		printf("This is child process: %d\n", pid);
+		printf("This is child process: pid=%d\n", pid);
 		return 0;
 	}
 	else if (pid > 0) {
 
-		printf("This is parent process: %d\n", pid);
+		printf("This is parent process: pid=%d\n", pid);
 		return 0;
 	}
 	else {

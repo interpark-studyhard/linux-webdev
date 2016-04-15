@@ -1,10 +1,15 @@
 #include <stdio.h>
+
 #include <unistd.h>
 #include <sys/wait.h>
-#include "starwars.h"
 
-static void do_parent_job();
-static void do_child_job();
+#define PARENT_NAME "Darth Vader"
+#define PARENT_SAYS "I'm your father."
+#define CHILD_NAME "Luke Skywalker"
+#define CHILD_SAYS "Noooooooooooooooooooooo!"
+
+static void parent_job();
+static void child_job();
 
 int main(int argc, char** argv) {
 
@@ -13,11 +18,11 @@ int main(int argc, char** argv) {
 	pid_t mypid = 0;
 
 	if (pid == 0) {
-		do_parent_job();
+		child_job();
 		return 0;
 	}
 	else if (pid > 0) {
-		do_child_job();
+		parent_job();
 		return 0;
 	}
 	else {
@@ -26,17 +31,16 @@ int main(int argc, char** argv) {
 	}
 }
 
-static void do_parent_job() {
+static void parent_job() {
 
 	pid_t mypid = getpid();
 
-	printf("%s(%d): %s\n", PARENT_NAME, mypid, PARENT_SAYS);
+	printf("%s(pid=%d): %s\n", PARENT_NAME, mypid, PARENT_SAYS);
 }
 
-
-static void do_child_job() {
+static void child_job() {
 
 	pid_t mypid = getpid();
 
-	printf("%s(%d): %s\n", CHILD_NAME, mypid, CHILD_SAYS);
+	printf("%s(pid=%d): %s\n", CHILD_NAME, mypid, CHILD_SAYS);
 }
