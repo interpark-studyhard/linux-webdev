@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # include config
-. `dirname $0`/dice.conf
+. `dirname $0`/slack-dice.conf
 
 ts=`date +%s`
 date=`date +%Y-%m-%d`
