@@ -37,8 +37,9 @@ text=${req_text:-6}
 echo "Content-Type: application/json"
 echo "Cache-Control: no-cache"
 echo
-if echo $text | grep -qi '^check:[0-9]\+$'; then
+if echo $text | egrep -qi '^check:(0x?)?[0-9a-f]+$'; then
 	maximum=`echo $text | sed -e 's/^check://i'`
+	maximum=`printf '%d' $maximum`
 
 	# check log
 	if [ -f $logfile ]; then
@@ -60,9 +61,8 @@ if echo $text | grep -qi '^check:[0-9]\+$'; then
 	cat <<EOF
 {"response_type":"in_channel","text":"/dice ${maximum} 결과를 발표하겠습니다.","attachments":[{"text":"${rank}"}]}
 EOF
-elif echo $text | grep -q '^[0-9]\+$'; then
-	maximum=$text
-	maximum=`expr $maximum + 0` # force convert number
+elif echo $text | egrep -qi '^(0x?)?[0-9a-f]+$'; then
+	maximum=`printf '%d' $text`
 
 	# throw dice
 	rand=`expr \( $RANDOM + 1 \) % $maximum`
