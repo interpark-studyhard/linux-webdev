@@ -2,7 +2,8 @@
 
 ## 3회차 숙제 내용
 
-> 1회차 숙제 제출 스크립트의 소스를 분석하여 제출한 파일을 다운로드 받아 현재 위치에 설정파일들을 복원하는 스크립트를 작성하시오.
+> 1회차 숙제 제출 스크립트의 소스를 분석하여 제출 파일을 만드는 과정을 이해하고,
+> 역으로 제출한 파일을 다운로드 받아 현재 위치에 설정파일들을 복원하는 스크립트를 작성하시오.
 
 * 1회차 숙제 제출 방법 :   
 [https://github.com/interpark-studyhard/linux-webdev/blob/master/bin/homework_01.md](https://github.com/interpark-studyhard/linux-webdev/blob/master/bin/homework_01.md)
