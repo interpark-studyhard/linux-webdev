@@ -65,7 +65,7 @@ elif echo $text | egrep -qi '^(0x?)?[0-9a-f]+$'; then
 	maximum=`printf '%d' $text`
 
 	# throw dice
-	rand=`expr \( $RANDOM + 1 \) % $maximum`
+	rand=`expr $RANDOM % $maximum + 1`
 
 	# log
 	echo -e "${date}\t${time}\t${ts}\tmax=${maximum}\t${rand}\t${user_name}" >>$LOGDIR/dice-${date}.log
