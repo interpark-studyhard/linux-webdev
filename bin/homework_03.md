@@ -142,6 +142,8 @@
 
 스크립트 내용이 여러줄이라서 입력하기 힘들면 -e 옵션을 줘서 편집기를 이용할 수 있다.
 
+    dagui@yura:~/linux-webdev/bin]$ EDITOR=/usr/bin/vi
+    dagui@yura:~/linux-webdev/bin]$ export EDITOR
     dagui@yura:~/linux-webdev/bin]$ sh homework_03.sh -ve dklee@interpark.com
     script> #!/bin/sh
     script> echo "I'm sorry T,.T"
