@@ -19,3 +19,8 @@
  - 선행학습: [PART 2 CentOS 리눅스의 기본 개념과 리눅스 관리자의 기본 역할] p146 ~ p186
  - 주입식: Linux: The Programing Language
 
+- 4회차 (5/14)
+ - 숙제: 1회차 숙제를 복원하는 쉘 스크립트 작성하기
+ - 선행학습: [PART 2 CentOS 리눅스의 기본 개념과 리눅스 관리자의 기본 역할] p186 ~ p238
+ - 주입식: Inside Linux Filesystem
+
