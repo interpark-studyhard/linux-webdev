@@ -22,5 +22,9 @@
 - 4회차 (5/14)
  - 숙제: 1회차 숙제를 복원하는 쉘 스크립트 작성하기
  - 선행학습: [PART 2 CentOS 리눅스의 기본 개념과 리눅스 관리자의 기본 역할] p186 ~ p238
- - 주입식: Inside Linux Filesystem
+ - 주입식: Linux: Datatypes #1 (Boolean & Process)
 
+- 5회차 (5/28,6/4)
+ - 숙제: 웹호스팅 서버 파일 권한 설정하기
+ - 선행학습: [PART 2 CentOS 리눅스의 기본 개념과 리눅스 관리자의 기본 역할] p239 ~ p261
+ - 주입식: Linux: Datatypes #2 (User & File)
