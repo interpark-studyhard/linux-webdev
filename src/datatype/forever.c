@@ -18,6 +18,7 @@ int main(int argc, char** argv) {
 		sleep(1);
 
 		printf("%s\n", FOREVER_LYRICS[i++]);
+		fflush(stdout);
 
 		if (i >= FOREVER_LYRICS_LEN)
 			i = 0;

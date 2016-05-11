@@ -4,6 +4,7 @@ core
 hello
 error
 forever
+forever.log
 fork
 fork2
 fork3
