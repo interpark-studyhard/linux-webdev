@@ -3,6 +3,7 @@ core
 *.o
 hello
 error
+error.log
 forever
 forever.log
 fork
