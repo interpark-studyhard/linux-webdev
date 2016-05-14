@@ -64,7 +64,7 @@
 고객들의 홈페이지 파일을 `/var/www/html` 에 복사해준다.
 
     # cd /var/www/html
-    # cp -r ~dagui/linux-webdev/bin/homework_04/* .
+    # cp -r ~dagui/linux-webdev/bin/homework_04/{pororo,crong} .
 
 고객들의 홈페이지가 제대로 보이는지 확인한다.
 
