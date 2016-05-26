@@ -119,7 +119,7 @@ RedHat 계열의 홈 디렉토리 기본 권한 설정이 바로 이 방식. 모
     -rw-rw-r--. 1 pororo pj-pororo 273  5월 18 04:07 index.html
     -rw-rw-r--. 1 petty  pj-pororo 255  5월 18 04:45 wife.html
 
-좀 골치아픈 문제가 생겼는데 `apache` 계정이 접근하도록 할 수가 없다.
+좀 골치아픈 문제가 남았는데 `apache` 계정이 접근하도록 할 수가 없다.
 만약 `apache`계정을 project group에 추가하면 쓰기 권한도 가져가게 되는 문제가 생긴다.
 
     # chown apache crong pororo
