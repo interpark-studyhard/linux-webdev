@@ -84,7 +84,7 @@ RedHat 계열의 홈 디렉토리 기본 권한 설정이 바로 이 방식. 모
     >     chmod -R g+w $u
     >     find $u -type d -exec chmod g+s {} \;
     > done
-    root@yura:/var/www/html]# ls -Rl
+    # ls -Rl
     .:
     합계 0
     drwxrwsr-x. 2 crong  pj-crong  39  5월 18 04:47 crong
@@ -100,11 +100,30 @@ RedHat 계열의 홈 디렉토리 기본 권한 설정이 바로 이 방식. 모
     -rw-rw-r--. 1 pororo pj-pororo 273  5월 18 04:07 index.html
     -rw-rw-r--. 1 petty  pj-pororo 255  5월 18 04:45 wife.html
 
-기본적인 project 설정은 마쳤다. 그런데 `apache` 계정이 접근하도록 할 수가 없다.
-만약 `apache`계정을 project group에 추가하면 쓰기 권한도 가져가게된다.
+기본적인 project 설정은 마쳤다. 그런데 다른 프로젝트 그룹 사용자들을 접근 못하도록 차단해야 한다.
 
-    # chmod u-w,o-rwx crong pororo
+    # chmod o-rwx crong pororo
+    # ls -Rl
+    .:
+    합계 0
+    drwxrws---. 2 crong  pj-crong  39  5월 18 04:47 crong
+    drwxrws---. 2 pororo pj-pororo 39  5월 18 04:45 pororo
+    
+    ./crong:
+    합계 8
+    -rw-rw-r--. 1 crong pj-crong 250  5월 18 03:12 index.html
+    -rw-rw-r--. 1 loopy pj-crong 254  5월 18 04:47 wife.html
+    
+    ./pororo:
+    합계 8
+    -rw-rw-r--. 1 pororo pj-pororo 273  5월 18 04:07 index.html
+    -rw-rw-r--. 1 petty  pj-pororo 255  5월 18 04:45 wife.html
+
+좀 골치아픈 문제가 생겼는데 `apache` 계정이 접근하도록 할 수가 없다.
+만약 `apache`계정을 project group에 추가하면 쓰기 권한도 가져가게 되는 문제가 생긴다.
+
     # chown apache crong pororo
+    # chmod u-w crong pororo
     # ls -lR
     .:
     합계 0
