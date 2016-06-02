@@ -21,8 +21,9 @@ for p in $*; do
 done
 
 # check token
-token=$SLACK_TOKEN
-if [ x"$token" != x"$req_token" ]; then
+if echo $SLACK_TOKEN | fgrep -q "$req_token" 2>/dev/null; then
+    : do nothing
+else
     echo "Status: 403 Forbidden"
     echo "Content-Type: text/html"
     echo
