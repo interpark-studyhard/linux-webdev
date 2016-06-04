@@ -72,8 +72,9 @@ elif echo $text | egrep -qi '^(0x?)?[0-9a-f]+$'; then
 	echo -e "${date}\t${time}\t${ts}\tmax=${maximum}\t${rand}\t${user_name}" >>$LOGDIR/dice-${date}.log
 
 	# output
+	prand=`printf "%05d" $rand | sed -e 's/^.../***/'`
 	cat <<EOF
-{"response_type":"in_channel","text":"@${user_name} \ub2d8\uc774 ${maximum}\uba74\uccb4 \uc8fc\uc0ac\uc704\ub97c \ub358\uc84c\uc2b5\ub2c8\ub2e4: ${rand}"}
+{"response_type":"in_channel","text":"@${user_name} \ub2d8\uc774 ${maximum}\uba74\uccb4 \uc8fc\uc0ac\uc704\ub97c \ub358\uc84c\uc2b5\ub2c8\ub2e4: ${prand}"}
 EOF
 else
 	# error
