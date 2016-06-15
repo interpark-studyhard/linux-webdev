@@ -1,0 +1,9 @@
+[Unit]
+Description=Inna Yoo Daemon
+
+[Service]
+ExecStart=/usr/local/sbin/innasrv
+ExecReload=/bin/kill -HUP $MAINPID
+
+[Install]
+WantedBy=multi-user.target

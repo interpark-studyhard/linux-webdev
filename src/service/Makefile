@@ -34,3 +34,14 @@ upstart-uninstall:
 	rm -f /usr/local/sbin/innasrv /etc/innasrv.cfg \
 		/etc/init/innasrv.conf /var/log/innasrv.log
 
+systemd-install: innasrv5
+	cp innasrv5 /usr/local/sbin/innasrv
+	cp innasrv.cfg /etc/innasrv.cfg
+	cp innasrv.systemd /lib/systemd/system/innasrv.service
+
+systemd-uninstall:
+	initctl stop innasrv
+	rm -f /usr/local/sbin/innasrv /etc/innasrv.cfg \
+		/lib/systemd/system/innasrv.service \
+		 /var/log/innasrv.log
+
