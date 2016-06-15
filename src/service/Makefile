@@ -24,7 +24,7 @@ init-uninstall:
 	rm -f /usr/local/sbin/innasrv /etc/innasrv.cfg \
               /etc/init.d/innasrv /var/log/innasrv.log
 
-upstart-install:
+upstart-install: innasrv5
 	cp innasrv5 /usr/local/sbin/innasrv
 	cp innasrv.cfg /etc/innasrv.cfg
 	cp innasrv.upstart /etc/init/innasrv.conf
