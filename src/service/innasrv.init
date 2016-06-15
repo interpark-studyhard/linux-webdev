@@ -8,10 +8,10 @@ case $1 in
     /sbin/innasrv
     ;;
   stop)
-    kill -TERM `/var/run/innasrv.pid`
+    kill -TERM `cat /var/run/innasrv.pid`
     ;;
   reload)
-    kill -HUP `/var/run/innasrv.pid`
+    kill -HUP `cat /var/run/innasrv.pid`
     ;;
   restart)
     $0 stop
