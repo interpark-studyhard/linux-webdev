@@ -13,11 +13,13 @@ compile: $(OBJS)
 clean:
 	rm -f $(TARGETS) $(OBJS) a.out core *.log
 
-install: innasrv4
+init-install: innasrv4
 	cp innasrv4 /usr/local/sbin/innasrv
 	cp innasrv.cfg /etc/innasrv.cfg
 	cp innasrv.init /etc/init.d/innasrv
 
-uninstall:
-	rm -f /sbin/innasrv /etc/innasrv.cfg /etc/init.d/innasrv
-
+init-uninstall:
+	service innasrv stop
+	chkconfig --del innasrv
+	rm -f /usr/local/sbin/innasrv /etc/innasrv.cfg \
+              /etc/init.d/innasrv /var/log/innasrv.log

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# chkconfig: 2345 90 30
+# chkconfig: 2345 90 10
 # description: Say forever that Inna You is beautiful.
 
 
