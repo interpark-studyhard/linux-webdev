@@ -40,7 +40,8 @@ systemd-install: innasrv5
 	cp innasrv.systemd /lib/systemd/system/innasrv.service
 
 systemd-uninstall:
-	initctl stop innasrv
+	systemctl stop innasrv
+	systemctl disable innasrv
 	rm -f /usr/local/sbin/innasrv /etc/innasrv.cfg \
 		/lib/systemd/system/innasrv.service \
 		 /var/log/innasrv.log
