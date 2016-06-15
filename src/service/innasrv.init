@@ -13,10 +13,18 @@ case $1 in
     $innasrv
     ;;
   stop)
-    kill -TERM `cat $pidfile`
+    if [ -f "$pidfile" ]; then
+        kill -TERM `cat $pidfile`
+    else
+        echo innasrv is not running. 1>&2
+    fi
     ;;
   reload)
-    kill -HUP `cat $pidfile`
+    if [ -f "$pidfile" ]; then
+        kill -HUP `cat $pidfile`
+    else
+        $0 start
+    fi
     ;;
   restart)
     $0 stop
