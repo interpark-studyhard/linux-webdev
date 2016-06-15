@@ -1,0 +1,6 @@
+a.out
+core
+*.o
+*.log
+innasrv[0-9]
+*.pid
