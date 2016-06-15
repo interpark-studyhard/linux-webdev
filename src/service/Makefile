@@ -23,3 +23,14 @@ init-uninstall:
 	chkconfig --del innasrv
 	rm -f /usr/local/sbin/innasrv /etc/innasrv.cfg \
               /etc/init.d/innasrv /var/log/innasrv.log
+
+upstart-install:
+	cp innasrv5 /usr/local/sbin/innasrv
+	cp innasrv.cfg /etc/innasrv.cfg
+	cp innasrv.upstart /etc/init/innasrv.conf
+
+upstart-uninstall:
+	initctl stop innasrv
+	rm -f /usr/local/sbin/innasrv /etc/innasrv.cfg \
+		/etc/init/innasrv.conf /var/log/innasrv.log
+

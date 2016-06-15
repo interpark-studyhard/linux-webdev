@@ -6,8 +6,8 @@
 #include <signal.h>
 #define FOREVER 1
 
-char *config = "innasrv.cfg";
-char *output = "innasrv.log";
+char *config = "/etc/innasrv.cfg";
+char *output = "/var/log/innasrv.log";
 
 char *msg = NULL;
 FILE *out = NULL;
