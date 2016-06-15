@@ -17,6 +17,7 @@ case $1 in
         kill -TERM `cat $pidfile`
     else
         echo innasrv is not running. 1>&2
+        exit 0
     fi
     ;;
   reload)
@@ -31,6 +32,14 @@ case $1 in
     sleep 1
     $0 start
     ;;
+  status)
+    if [ -f "$pidfile" ]; then
+        echo "innarv is running(`cat $pidfile`)."
+        exit 0
+    else
+        echo "innasrv is not running."
+        exit 1
+    fi
   monitor)
     tail -f $logfile
     ;;
