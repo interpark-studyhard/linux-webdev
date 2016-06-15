@@ -3,22 +3,30 @@
 # chkconfig: 2345 90 30
 # description: Say forever that Inna You is beautiful.
 
+
+innasrv=/usr/local/sbin/innasrv
+pidfile=/var/run/innasrv.pid
+logfile=/var/log/innasrv.log
+
 case $1 in
   start)
-    /sbin/innasrv
+    $innasrv
     ;;
   stop)
-    kill -TERM `cat /var/run/innasrv.pid`
+    kill -TERM `cat $pidfile`
     ;;
   reload)
-    kill -HUP `cat /var/run/innasrv.pid`
+    kill -HUP `cat $pidfile`
     ;;
   restart)
     $0 stop
     sleep 1
     $0 start
     ;;
+  monitor)
+    tail -f $logfile
+    ;;
   *)
-    echo "usage: $0 { start | stop | reload | restart }"
+    echo "usage: $0 { start | stop | reload | restart | monitor }"
     exit 0
 esac

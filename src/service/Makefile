@@ -14,7 +14,7 @@ clean:
 	rm -f $(TARGETS) $(OBJS) a.out core *.log
 
 install: innasrv4
-	cp innasrv4 /sbin/innasrv
+	cp innasrv4 /usr/local/sbin/innasrv
 	cp innasrv.cfg /etc/innasrv.cfg
 	cp innasrv.init /etc/init.d/innasrv
 
