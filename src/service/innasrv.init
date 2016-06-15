@@ -45,6 +45,6 @@ case $1 in
     tail -f $logfile
     ;;
   *)
-    echo "usage: $0 { start | stop | reload | restart | monitor }"
+    echo "usage: $0 { start | stop | reload | restart | status | monitor }"
     exit 0
 esac

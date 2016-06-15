@@ -1,6 +1,6 @@
 
-TARGETS = innasrv1 innasrv2 innasrv3 innasrv4
-OBJS = innasrv1.o innasrv2.o innasrv3.o innasrv4.o
+TARGETS = innasrv1 innasrv2 innasrv3 innasrv4 innasrv5
+OBJS = innasrv1.o innasrv2.o innasrv3.o innasrv4.o innasrv5.o
 LIBS = -lc
 
 .SUFFIXES: .c .o
