@@ -4,7 +4,7 @@ OBJS = innad1.o innad2.o innad3.o innad4.o innad5.o
 LIBS = -lc
 
 .SUFFIXES: .c .o
-.PHONY: all compile clean install
+.PHONY: all compile clean init-install init-uninstall upstart-install upstart-uninstall systemd-install systemd-uninstall
 
 all: compile $(TARGETS)
 
