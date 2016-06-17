@@ -22,7 +22,7 @@ init-uninstall:
 	service innad stop
 	chkconfig --del innad
 	rm -f /usr/local/sbin/innad /etc/innad.cfg \
-              /etc/init.d/innad /var/log/innad.log
+              /etc/init.d/innad
 
 upstart-install: innad5
 	cp innad5 /usr/local/sbin/innad
@@ -33,7 +33,7 @@ upstart-uninstall:
 	initctl status innad | grep -q 'run' \
              && initctl stop innad; true
 	rm -f /usr/local/sbin/innad /etc/innad.cfg \
-		/etc/init/innad.conf /var/log/innad.log
+		/etc/init/innad.conf
 
 systemd-install: innad5
 	cp innad5 /usr/local/sbin/innad
@@ -44,6 +44,5 @@ systemd-uninstall:
 	systemctl stop innad
 	systemctl disable innad
 	rm -f /usr/local/sbin/innad /etc/innad.cfg \
-		/lib/systemd/system/innad.service \
-		 /var/log/innad.log
+		/lib/systemd/system/innad.service
 
