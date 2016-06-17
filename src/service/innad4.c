@@ -6,9 +6,9 @@
 #include <signal.h>
 #define FOREVER 1
 
-char *config = "/etc/innasrv.cfg";
-char *output = "/var/log/innasrv.log";
-char *pidfile = "/var/run/innasrv.pid";
+char *config = "/etc/innad.cfg";
+char *output = "/var/log/innad.log";
+char *pidfile = "/var/run/innad.pid";
 
 char *msg = NULL;
 FILE *out = NULL;

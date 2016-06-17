@@ -1,6 +1,6 @@
 
-TARGETS = innasrv1 innasrv2 innasrv3 innasrv4 innasrv5
-OBJS = innasrv1.o innasrv2.o innasrv3.o innasrv4.o innasrv5.o
+TARGETS = innad1 innad2 innad3 innad4 innad5
+OBJS = innad1.o innad2.o innad3.o innad4.o innad5.o
 LIBS = -lc
 
 .SUFFIXES: .c .o
@@ -13,36 +13,37 @@ compile: $(OBJS)
 clean:
 	rm -f $(TARGETS) $(OBJS) a.out core *.log
 
-init-install: innasrv4
-	cp innasrv4 /usr/local/sbin/innasrv
-	cp innasrv.cfg /etc/innasrv.cfg
-	cp innasrv.init /etc/init.d/innasrv
+init-install: innad4
+	cp innad4 /usr/local/sbin/innad
+	cp innad.cfg /etc/innad.cfg
+	cp innad.init /etc/init.d/innad
 
 init-uninstall:
-	service innasrv stop
-	chkconfig --del innasrv
-	rm -f /usr/local/sbin/innasrv /etc/innasrv.cfg \
-              /etc/init.d/innasrv /var/log/innasrv.log
+	service innad stop
+	chkconfig --del innad
+	rm -f /usr/local/sbin/innad /etc/innad.cfg \
+              /etc/init.d/innad /var/log/innad.log
 
-upstart-install: innasrv5
-	cp innasrv5 /usr/local/sbin/innasrv
-	cp innasrv.cfg /etc/innasrv.cfg
-	cp innasrv.upstart /etc/init/innasrv.conf
+upstart-install: innad5
+	cp innad5 /usr/local/sbin/innad
+	cp innad.cfg /etc/innad.cfg
+	cp innad.upstart /etc/init/innad.conf
 
 upstart-uninstall:
-	initctl stop innasrv
-	rm -f /usr/local/sbin/innasrv /etc/innasrv.cfg \
-		/etc/init/innasrv.conf /var/log/innasrv.log
+	initctl status innad | grep -q 'run' \
+             && initctl stop innad; true
+	rm -f /usr/local/sbin/innad /etc/innad.cfg \
+		/etc/init/innad.conf /var/log/innad.log
 
-systemd-install: innasrv5
-	cp innasrv5 /usr/local/sbin/innasrv
-	cp innasrv.cfg /etc/innasrv.cfg
-	cp innasrv.systemd /lib/systemd/system/innasrv.service
+systemd-install: innad5
+	cp innad5 /usr/local/sbin/innad
+	cp innad.cfg /etc/innad.cfg
+	cp innad.systemd /lib/systemd/system/innad.service
 
 systemd-uninstall:
-	systemctl stop innasrv
-	systemctl disable innasrv
-	rm -f /usr/local/sbin/innasrv /etc/innasrv.cfg \
-		/lib/systemd/system/innasrv.service \
-		 /var/log/innasrv.log
+	systemctl stop innad
+	systemctl disable innad
+	rm -f /usr/local/sbin/innad /etc/innad.cfg \
+		/lib/systemd/system/innad.service \
+		 /var/log/innad.log
 

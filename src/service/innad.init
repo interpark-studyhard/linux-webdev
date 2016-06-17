@@ -4,19 +4,19 @@
 # description: Say forever that Inna You is beautiful.
 
 
-innasrv=/usr/local/sbin/innasrv
-pidfile=/var/run/innasrv.pid
-logfile=/var/log/innasrv.log
+innad=/usr/local/sbin/innad
+pidfile=/var/run/innad.pid
+logfile=/var/log/innad.log
 
 case $1 in
   start)
-    $innasrv
+    $innad
     ;;
   stop)
     if [ -f "$pidfile" ]; then
         kill -TERM `cat $pidfile`
     else
-        echo innasrv is not running. 1>&2
+        echo innad is not running. 1>&2
         exit 0
     fi
     ;;
@@ -37,7 +37,7 @@ case $1 in
         echo "innarv is running(`cat $pidfile`)."
         exit 0
     else
-        echo "innasrv is not running."
+        echo "innad is not running."
         exit 1
     fi
     ;;

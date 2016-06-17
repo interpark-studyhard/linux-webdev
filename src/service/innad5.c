@@ -3,10 +3,11 @@
 #include <string.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <signal.h>
 #define FOREVER 1
 
-char *config = "innasrv.cfg";
-char *output = "innasrv.log";
+char *config = "/etc/innad.cfg";
+char *output = "/var/log/innad.log";
 
 char *msg = NULL;
 FILE *out = NULL;
@@ -17,38 +18,27 @@ void service();
 void finalize();
 char *sysdate();
 
-int main(void) {
-
-    pid_t pid = fork();
-    if (pid < 0) {
-        perror("fork #1 error");
-        exit(1);
-    }
-    else if (pid > 0) {
-        // parent shutdown immediately 
-        exit(0);
-    }
-    else {
-        pid_t sid = setsid();
-        fclose(stdout);
-        fclose(stderr);
-        fclose(stdin);
-
-        read_config();
-        open_out();
-        service();
-        finalize();
-    }
-
-    return 0;
+void sig_hup_handler(int signo) {
+    read_config();
+    open_out();
+}
+void sig_term_handler(int signo) {
+    finalize();
+    exit(0);
 }
 
-void service() {
-    while (FOREVER) {
-        fprintf(out, "%s: %s\n", sysdate(), msg);
-        fflush(out);
-        sleep(1);
-    }
+int main(void) {
+
+    signal(SIGHUP, (void*)sig_hup_handler);
+    signal(SIGTERM, (void*)sig_term_handler);
+    signal(SIGINT, (void*)sig_term_handler);
+
+    read_config();
+    open_out();
+    service();
+    finalize();
+
+    return 0;
 }
 
 void read_config() {
@@ -69,6 +59,15 @@ void open_out() {
     if (out != NULL)
         fclose(out);
     out = fopen(output, "a");
+}
+
+void service() {
+
+    while (FOREVER) {
+        fprintf(out, "%s: %s\n", sysdate(), msg);
+        fflush(out);
+        sleep(1);
+    }
 }
 
 void finalize() {
